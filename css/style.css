@@ -1956,4 +1956,101 @@ form label {
   }
 }
 
+.url-bar{
+  background-color: rgba(22, 122, 188,0.1);
+  border: 1px solid yellowgreen;
+   padding-left: 50px;
+   padding-bottom: 10px;
+  padding-top: 10px;
+  margin: 10px;
+  color : white;
+  font-family:Comic Sans MS ;
+    border-radius: 6px
+  
+    
+}
+.new-url-bar{
+  background-color: rgba(22, 122, 188,0.1);
+  border: 1px solid yellowgreen;
+   padding-left: 50px;
+   padding-bottom: 10px;
+  padding-top: 10px;
+  margin: 10px;
+  color : white;
+  font-family:Comic Sans MS ;
+    border-radius: 6px
+  
+    
+}
+
+.url-bar:hover{
+  background-color: rgba(22, 150, 188,0.2);
+  border: 1.5px solid yellowgreen;
+   padding-left: 50px;
+   padding-bottom: 10px;
+  margin: 10px;
+  color : white;
+  font-family:Comic Sans MS 
+  
+    
+}
+.del-url :focus{
+  background-color: rgba(153, 0, 0,0.3);
+  border: 5px solid red;
+   padding: 2px;
+  margin-right: 10px;
+  color :#ffaaaa ;
+  float : right; 
+  cursor: pointer;
+  border-radius: 6px;
+    }
+.del-url:hover{
+  background-color: rgba(153, 0, 0,0.9);
+  border: 1px solid red;
+  margin-right: 10px;
+  color :#ffaaaa ;
+  float : right; 
+  font-family: 'Times New Roman', Times, serif;
+  cursor: pointer;
+}
+.del-url{
+  background-color: rgba(153, 0, 0,0.3);
+  border: 1px solid red;
+   padding: 2px;
+  margin-right: 10px;
+  color :#ffaaaa ;
+  float : right; 
+  cursor: pointer;
+  font-family: 'Times New Roman', Times, serif;
+  border-radius: 6px;
+    }
+    .btn-url{
+      background-color: rgba(7, 105, 20, 0.2);
+      border: 1px solid green;
+       padding: 2px;
+      margin-right: 10px;
+      color :rgb(230, 250, 253);
+      float : right; 
+      cursor: pointer;
+      font-family: 'Times New Roman', Times, serif;
+      border-radius: 6px;
+        }
+        .btn-url:hover{
+          background-color: rgba(7, 105, 20, 0.5);
+          border: 1px solid green;
+           padding: 2px;
+          margin-right: 10px;
+          color :rgb(230, 250, 253);
+          float : right; 
+          cursor: pointer;
+          font-family: 'Times New Roman', Times, serif;
+          border-radius: 6px;
+            }
+            .new-url{
+              background-color: rgba(0, 20, 16,0.4);
+              border-radius: 5px;
+              border : 1px solid green;
+              font-family: 'Times New Roman', Times, serif;
+              width : 90%
+            }
 /*# sourceMappingURL=style.css.map */
