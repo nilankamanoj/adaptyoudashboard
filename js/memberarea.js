@@ -32,6 +32,7 @@ function addUrl() {
 
         xhr.addEventListener("readystatechange", function () {
             if (this.readyState === 4) {
+                document.getElementById("overlay").style.display = "none";
                 try {
                     var res = JSON.parse(this.responseText);
                     if (res["success"]) {
@@ -55,6 +56,7 @@ function addUrl() {
         xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
         xhr.send(data);
+        document.getElementById("overlay").style.display = "block";
 
         
     }
@@ -73,6 +75,7 @@ function loadContent() {
 
     xhr.addEventListener("readystatechange", function () {
         if (this.readyState === 4) {
+            document.getElementById("overlay").style.display = "none";
             try {
                 var res = JSON.parse(this.responseText);
                 if (res["success"]) {
@@ -104,6 +107,7 @@ function loadContent() {
 
 
     xhr.send(data);
+    document.getElementById("overlay").style.display = "block";
 
     document.getElementById("alter").onclick = function () {
         logOut();

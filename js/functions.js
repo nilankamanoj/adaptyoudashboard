@@ -1,4 +1,5 @@
 if (document.cookie) {
+	document.getElementById("overlay").style.display = "block";
 	var cred = document.cookie.split(';');
 	var email = cred[0].split("=")[1];
 	var token = cred[1].split("=")[1];
@@ -10,6 +11,7 @@ if (document.cookie) {
 
 	xhr.addEventListener("readystatechange", function () {
 		if (this.readyState === 4) {
+			document.getElementById("overlay").style.display = "none";
 			try {
 				var res = JSON.parse(this.responseText);
 				if (res["success"]) {
@@ -126,6 +128,7 @@ function signIn() {
 		xhr.addEventListener("readystatechange", function () {
 			if (this.readyState === 4) {
 				console.log(this.responseText);
+				document.getElementById("overlay").style.display = "none";
 				var res = JSON.parse(this.responseText);
 				if (res["success"]) {
 					createCookie(document.getElementById('email').value, res["token"]);
@@ -139,6 +142,7 @@ function signIn() {
 		//xhr.setRequestHeader("Cache-Control", "no-cache");
 
 		xhr.send(data);
+		document.getElementById("overlay").style.display = "block";
 	}
 }
 
@@ -164,6 +168,7 @@ function signUp() {
 		xhr.addEventListener("readystatechange", function () {
 			if (this.readyState === 4) {
 				console.log(this.responseText);
+				document.getElementById("overlay").style.display = "none";
 			}
 		});
 
@@ -172,6 +177,7 @@ function signUp() {
 		//xhr.setRequestHeader("Cache-Control", "no-cache");
 
 		xhr.send(data);
+		document.getElementById("overlay").style.display = "block";
 	}
 
 }

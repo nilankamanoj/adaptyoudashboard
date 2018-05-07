@@ -1,7 +1,8 @@
 <!DOCTYPE HTML>
 
 <html>
-	<head>
+
+<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Adapt You &mdash; Member Area</title>
@@ -10,12 +11,12 @@
 	<meta name="keywords" content="adapt you, adaptive user interface generator, user interface, machine learning" />
 	<meta name="author" content="nilanka manoj" />
 
-  	<!-- Facebook and Twitter integration -->
-	<meta property="og:title" content=""/>
-	<meta property="og:image" content=""/>
-	<meta property="og:url" content=""/>
-	<meta property="og:site_name" content=""/>
-	<meta property="og:description" content=""/>
+	<!-- Facebook and Twitter integration -->
+	<meta property="og:title" content="" />
+	<meta property="og:image" content="" />
+	<meta property="og:url" content="" />
+	<meta property="og:site_name" content="" />
+	<meta property="og:description" content="" />
 	<meta name="twitter:title" content="" />
 	<meta name="twitter:image" content="" />
 	<meta name="twitter:url" content="" />
@@ -52,127 +53,183 @@
 	<!--[if lt IE 9]>
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
-	
-	</head>
-	<body>
 
+</head>
+
+<body>
+	<div id="overlay">
+		<center>
+			<img src="images/loading.gif" width="400px">
+		</center>
+	</div>
 	<div class="gtco-loader"></div>
 
 	<div id="page">
 
 
-	<!-- <div class="page-inner"> -->
-	<nav class="gtco-nav" role="navigation">
-		<div class="gtco-container">
+		<!-- <div class="page-inner"> -->
+		<nav class="gtco-nav" role="navigation">
+			<div class="gtco-container">
 
-			<div class="row">
-				<div class="col-sm-4 col-xs-12">
-					<div id="gtco-logo"><a href="index.html">Adapt You <em>.</em></a></div>
+				<div class="row">
+					<div class="col-sm-4 col-xs-12">
+						<div id="gtco-logo">
+							<a href="index.html">Adapt You
+								<em>.</em>
+							</a>
+						</div>
+					</div>
+					<div class="col-xs-8 text-right menu-1">
+						<ul>
+							<li>
+								<a href="#">Menu</a>
+							</li>
+							<li class="has-dropdown">
+								<a href="#">Services</a>
+								<ul class="dropdown">
+									<li>
+										<a href="#">ui adaptation</a>
+									</li>
+									<li>
+										<a href="#">ui monitoring</a>
+									</li>
+									<li>
+										<a href="#">other</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="#">Contact</a>
+							</li>
+							<button class="btn btn-primary" id="alter">
+								<span>sign out</span>
+								</a>
+							</button>
+						</ul>
+					</div>
 				</div>
-				<div class="col-xs-8 text-right menu-1">
-					<ul>
-						<li><a href="#">Menu</a></li>
-						<li class="has-dropdown">
-							<a href="#">Services</a>
-							<ul class="dropdown">
-								<li><a href="#">ui adaptation</a></li>
-								<li><a href="#">ui monitoring</a></li>
-								<li><a href="#">other</a></li>
-							</ul>
-						</li>
-						<li><a href="#">Contact</a></li>
-						<button class="btn btn-primary" id ="alter"><span>sign out</span></a></button>
-					</ul>
-				</div>
+
 			</div>
+		</nav>
 
-		</div>
-	</nav>
-
-	<header id="gtco-header" class="gtco-cover gtco-cover-md" role="banner" style="background-image: url(images/img_bg_1.jpg)" data-stellar-background-ratio="0.5">
-		<div class="overlay"></div>
-		<div class="gtco-container">
-			<div class="row">
-				<div class="col-md-12 col-md-offset-0 text-left">
+		<header id="gtco-header" class="gtco-cover gtco-cover-md" role="banner" style="background-image: url(images/img_bg_1.jpg)"
+		 data-stellar-background-ratio="0.5">
+			<div class="overlay"></div>
+			<div class="gtco-container">
+				<div class="row">
+					<div class="col-md-12 col-md-offset-0 text-left">
 
 
-					<div class="row row-mt-15em">
-						<span class="intro-text-small" id = "message">  </span>
-						<div class="form-wrap" data-animate-effect="fadeInUp">
-							<div class="tab">
+						<div class="row row-mt-15em">
+							<span class="intro-text-small" id="message"> </span>
+							<div class="form-wrap" data-animate-effect="fadeInUp">
+								<div class="tab">
 
-								<div class="tab-content">
-									<div class="tab-content-inner active" data-content="signup">
-										<h3>Monitoring Web Pages</h3>
-										
-										<div id = "urls"></div>
-										<div id = "info"></div>
-										<div class= 'new-url-bar'><input type='text' id='new-url' class='new-url'><span id='close' class = 'btn-url' onclick='addUrl()'>Add URL</span></br></div>
-										<div class = 'documentation' onclick="location.href='documentation.html';">Configure Web Pages to Monitor</div>
+									<div class="tab-content">
+										<div class="tab-content-inner active" data-content="signup">
+											<h3>Monitoring Web Pages</h3>
+
+											<div id="urls"></div>
+											<div id="info"></div>
+											<div class='new-url-bar'>
+												<input type='text' id='new-url' class='new-url'>
+												<span id='close' class='btn-url' onclick='addUrl()'>Add URL</span>
+												</br>
+											</div>
+											<div class='documentation' onclick="location.href='documentation.html';">Configure Web Pages to Monitor</div>
+										</div>
+
+
 									</div>
-
-
 								</div>
+
 							</div>
-							
+
 						</div>
 
+
 					</div>
-
-
 				</div>
 			</div>
-		</div>
-	</header>
+		</header>
 
 
 
 
-	<footer id="gtco-footer" role="contentinfo" style="background-image: url(images/img_bg_1.jpg)" data-stellar-background-ratio="0.5">
-		<div class="overlay"></div>
-		<div class="gtco-container">
-			<div class="row row-pb-md">
+		<footer id="gtco-footer" role="contentinfo" style="background-image: url(images/img_bg_1.jpg)" data-stellar-background-ratio="0.5">
+			<div class="overlay"></div>
+			<div class="gtco-container">
+				<div class="row row-pb-md">
 
 
 
 
-				<div class="col-md-12 text-center">
-					<div class="gtco-widget">
-						<h3>Get In Touch</h3>
-						<ul class="gtco-quick-contact">
-							<li><a href="#"><i class="icon-phone"></i> +1 234 567 890</a></li>
-							<li><a href="#"><i class="icon-mail2"></i> info@adaptyou.com</a></li>
-							<li><a href="#"><i class="icon-chat"></i> Live Chat</a></li>
-						</ul>
+					<div class="col-md-12 text-center">
+						<div class="gtco-widget">
+							<h3>Get In Touch</h3>
+							<ul class="gtco-quick-contact">
+								<li>
+									<a href="#">
+										<i class="icon-phone"></i> +1 234 567 890</a>
+								</li>
+								<li>
+									<a href="#">
+										<i class="icon-mail2"></i> info@adaptyou.com</a>
+								</li>
+								<li>
+									<a href="#">
+										<i class="icon-chat"></i> Live Chat</a>
+								</li>
+							</ul>
+						</div>
+						<div class="gtco-widget">
+							<h3>Get Social</h3>
+							<ul class="gtco-social-icons">
+								<li>
+									<a href="#">
+										<i class="icon-twitter"></i>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<i class="icon-facebook"></i>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<i class="icon-linkedin"></i>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<i class="icon-dribbble"></i>
+									</a>
+								</li>
+							</ul>
+						</div>
 					</div>
-					<div class="gtco-widget">
-						<h3>Get Social</h3>
-						<ul class="gtco-social-icons">
-							<li><a href="#"><i class="icon-twitter"></i></a></li>
-							<li><a href="#"><i class="icon-facebook"></i></a></li>
-							<li><a href="#"><i class="icon-linkedin"></i></a></li>
-							<li><a href="#"><i class="icon-dribbble"></i></a></li>
-						</ul>
+
+					<div class="col-md-12 text-center copyright">
+						<p>
+							<small class="block">&copy; Adapt you. All Rights Reserved.</small>
+							<small class="block">Designed by nilanka manoj</small>
+						</p>
 					</div>
+
 				</div>
 
-				<div class="col-md-12 text-center copyright">
-					<p><small class="block">&copy; Adapt you. All Rights Reserved.</small>
-						<small class="block">Designed by nilanka manoj</small></p>
-				</div>
+
 
 			</div>
-
-
-
-		</div>
-	</footer>
-	<!-- </div> -->
+		</footer>
+		<!-- </div> -->
 
 	</div>
 
 	<div class="gototop js-top">
-		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
+		<a href="#" class="js-gotop">
+			<i class="icon-arrow-up"></i>
+		</a>
 	</div>
 
 	<!-- jQuery -->
@@ -203,5 +260,6 @@
 	<script src="js/main.js"></script>
 	<script src="js/memberarea.js"></script>
 
-	</body>
+</body>
+
 </html>
