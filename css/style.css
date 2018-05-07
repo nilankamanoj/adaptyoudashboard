@@ -2053,4 +2053,24 @@ form label {
               font-family: 'Times New Roman', Times, serif;
               width : 90%
             }
+            .documentation{
+      
+      
+              padding: 2px;
+             margin-right: 10px;
+             color :rgb(230, 250, 253);
+             float : right; 
+             cursor: pointer;
+             
+               }
+       .documentation:hover{
+             
+             font-size: 17px;
+              padding: 3px;
+             margin-right: 10px;
+             color : lightgreen;
+             float : right; 
+             cursor: pointer;
+             
+               }
 /*# sourceMappingURL=style.css.map */
