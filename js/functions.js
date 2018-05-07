@@ -1,4 +1,40 @@
+if (document.cookie) {
+	var cred = document.cookie.split(';');
+	var email = cred[0].split("=")[1];
+	var token = cred[1].split("=")[1];
 
+	var data = null;
+
+	var xhr = new XMLHttpRequest();
+
+
+	xhr.addEventListener("readystatechange", function () {
+		if (this.readyState === 4) {
+			try {
+				var res = JSON.parse(this.responseText);
+				if (res["success"]) {
+					document.location.replace("memberarea.html");
+				}
+				else {
+					delete document.cookie;
+
+				}
+			}
+			catch (e) {
+				delete document.cookie;
+
+			}
+		}
+	});
+
+	xhr.open("GET", "https://adaptyoumain.herokuapp.com/api/memberinfo");
+	xhr.setRequestHeader("Authorization", token);
+
+
+
+	xhr.send(data);
+
+}
 var signin = "<div id ='frmsignin'>"
 	+ "<h3 class='cursive-font'>sign in</h3>"
 	+ "<div id ='info'></div>"
@@ -73,13 +109,51 @@ document.getElementById("alter").onclick = function () {
 
 function signIn() {
 	if (!document.getElementById('email').value || !document.getElementById('password').value) {
-		document.getElementById('info').innerHTML = "<div class=''><i class='glyphicon glyphicon-warning-sign'></i> &nbsp;all fields required! </div>";
+		document.getElementById('info').innerHTML = "<div class='alert alert-danger'><i class='glyphicon glyphicon-warning-sign'></i> &nbsp;all fields required! </div>";
 	}
 	else if (!validateEmail(document.getElementById('email').value)) {
-		document.getElementById('info').innerHTML = "<div class=''><i class='glyphicon glyphicon-warning-sign'></i> &nbsp;invalid email! </div>";
+		document.getElementById('info').innerHTML = "<div class='alert alert-danger'><i class='glyphicon glyphicon-warning-sign'></i> &nbsp;invalid email! </div>";
 	}
 	else if (document.getElementById('password').value.length < 6) {
-		document.getElementById('info').innerHTML = "<div class=''><i class='glyphicon glyphicon-warning-sign'></i> &nbsp;pasword required more than 6! </div>";
+		document.getElementById('info').innerHTML = "<div class='alert alert-danger'><i class='glyphicon glyphicon-warning-sign'></i> &nbsp;pasword required more than 6! </div>";
+	}
+	else {
+		var data = "email=" + document.getElementById('email').value + "&password=" + document.getElementById('password').value;
+
+		var xhr = new XMLHttpRequest();
+		//xhr.withCredentials = true;
+
+		xhr.addEventListener("readystatechange", function () {
+			if (this.readyState === 4) {
+				console.log(this.responseText);
+				var res = JSON.parse(this.responseText);
+				if (res["success"]) {
+					createCookie(document.getElementById('email').value, res["token"]);
+					document.location.replace("memberarea.html");
+				}
+			}
+		});
+
+		xhr.open("POST", "https://adaptyoumain.herokuapp.com/api/authenticate");
+		xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+		//xhr.setRequestHeader("Cache-Control", "no-cache");
+
+		xhr.send(data);
+	}
+}
+
+function signUp() {
+	if (!document.getElementById('email').value || !document.getElementById('password').value || !document.getElementById('passwordconf').value) {
+		document.getElementById('info').innerHTML = "<div class='alert alert-danger'><i class='glyphicon glyphicon-warning-sign'></i> &nbsp;all fields required! </div>";
+	}
+	else if (!validateEmail(document.getElementById('email').value)) {
+		document.getElementById('info').innerHTML = "<div class='alert alert-danger'><i class='glyphicon glyphicon-warning-sign'></i> &nbsp;invalid email! </div>";
+	}
+	else if (document.getElementById('password').value.length < 6) {
+		document.getElementById('info').innerHTML = "<div class='alert alert-danger'><i class='glyphicon glyphicon-warning-sign'></i> &nbsp;pasword required more than 6! </div>";
+	}
+	else if (document.getElementById('password').value != document.getElementById('passwordconf').value) {
+		document.getElementById('info').innerHTML = "<div class='alert alert-danger'><i class='glyphicon glyphicon-warning-sign'></i> &nbsp;password and confirm mismatch! </div>";
 	}
 	else {
 		var data = "email=" + document.getElementById('email').value + "&password=" + document.getElementById('password').value;
@@ -93,49 +167,23 @@ function signIn() {
 			}
 		});
 
-		xhr.open("POST", "https://adaptyoumain.herokuapp.com/api/authenticate");
+		xhr.open("POST", "https://adaptyoumain.herokuapp.com/api/signup");
 		xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 		//xhr.setRequestHeader("Cache-Control", "no-cache");
 
 		xhr.send(data);
 	}
+
 }
 
-	function signUp() {
-		if (!document.getElementById('email').value || !document.getElementById('password').value || !document.getElementById('passwordconf').value) {
-			document.getElementById('info').innerHTML = "<div class=''><i class='glyphicon glyphicon-warning-sign'></i> &nbsp;all fields required! </div>";
-		}
-		else if (!validateEmail(document.getElementById('email').value)) {
-			document.getElementById('info').innerHTML = "<div class=''><i class='glyphicon glyphicon-warning-sign'></i> &nbsp;invalid email! </div>";
-		}
-		else if (document.getElementById('password').value.length < 6) {
-			document.getElementById('info').innerHTML = "<div class=''><i class='glyphicon glyphicon-warning-sign'></i> &nbsp;pasword required more than 6! </div>";
-		}
-		else if (document.getElementById('password').value != document.getElementById('passwordconf').value) {
-			document.getElementById('info').innerHTML = "<div class=''><i class='glyphicon glyphicon-warning-sign'></i> &nbsp;password and confirm mismatch! </div>";
-		}
-		else {
-			var data = "email=" + document.getElementById('email').value + "&password=" + document.getElementById('password').value;
+function validateEmail(email) {
+	var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+	return re.test(String(email).toLowerCase());
+}
 
-			var xhr = new XMLHttpRequest();
-			//xhr.withCredentials = true;
+function createCookie(email, token) {
 
-			xhr.addEventListener("readystatechange", function () {
-				if (this.readyState === 4) {
-					console.log(this.responseText);
-				}
-			});
+	document.cookie = "email=" + email + "; path=/";
+	document.cookie = "token=" + token + "; path=/";
 
-			xhr.open("POST", "https://adaptyoumain.herokuapp.com/api/signup");
-			xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-			//xhr.setRequestHeader("Cache-Control", "no-cache");
-
-			xhr.send(data);
-		}
-
-	}
-
-	function validateEmail(email) {
-		var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-		return re.test(String(email).toLowerCase());
-	}
+}
