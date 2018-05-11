@@ -193,3 +193,4 @@ function createCookie(email, token) {
 	document.cookie = "token=" + token + "; path=/";
 
 }
+

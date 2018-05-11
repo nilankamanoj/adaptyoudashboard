@@ -18,7 +18,45 @@ function logOut() {
 }
 
 function deleteUrl(url) {
-    console.log(url);
+    if (newUrl.length > 5) {
+        var data = "url=" + newUrl;
+
+        var xhr = new XMLHttpRequest();
+
+
+        xhr.addEventListener("readystatechange", function () {
+            if (this.readyState === 4) {
+                document.getElementById("overlay").style.display = "none";
+                try {
+                    var res = JSON.parse(this.responseText);
+                    if (res["success"]) {
+                        document.getElementById('info').innerHTML = "<div class='alert alert-info'><i class='glyphicon glyphicon-warning-sign'></i> &nbsp;"+res["msg"]+" </div>";
+                        document.getElementById("new-url").value = "";
+                        loadContent();
+                    }
+                    else {
+                        document.getElementById('info').innerHTML = "<div class='alert alert-danger'><i class='glyphicon glyphicon-warning-sign'></i> &nbsp;"+res["msg"]+" </div>";
+                    }
+                }
+                catch (e) {
+                    delete document.cookie;
+                    document.location.replace("index.html");
+                }
+            }
+        });
+
+        xhr.open("POST", "https://adaptyoumain.herokuapp.com/api/memberinfo");
+        xhr.setRequestHeader("Authorization", token);
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+        xhr.send(data);
+        document.getElementById("overlay").style.display = "block";
+
+        
+    }
+    else {
+        document.getElementById('info').innerHTML = "<div class='alert alert-danger'><i class='glyphicon glyphicon-warning-sign'></i> &nbsp;invalid url! </div>";
+    }
 }
 
 function addUrl() {
