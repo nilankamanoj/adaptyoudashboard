@@ -31,7 +31,6 @@ function deleteUrl(url) {
                     var res = JSON.parse(this.responseText);
                     if (res["success"]) {
                         document.getElementById('info').innerHTML = "<div class='alert alert-info'><i class='glyphicon glyphicon-warning-sign'></i> &nbsp;"+res["msg"]+" </div>";
-                        document.getElementById("new-url").value = "";
                         loadContent();
                     }
                     else {
