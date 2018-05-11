@@ -170,6 +170,7 @@ function signUp() {
 
 		xhr.addEventListener("readystatechange", function () {
 			if (this.readyState === 4) {
+				var res = JSON.parse(this.responseText);
 				document.getElementById("overlay").style.display = "none";
 				if (res["success"]) {
 					document.getElementById('info').innerHTML = "<div class='alert alert-info'><i class='glyphicon glyphicon-warning-sign'></i> &nbsp;"+res["msg"]+" </div>";
