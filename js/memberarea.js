@@ -18,7 +18,7 @@ function logOut() {
 }
 
 function deleteUrl(url) {
-    if (newUrl.length > 5) {
+    if (url.length > 5) {
         var data = "url=" + url;
 
         var xhr = new XMLHttpRequest();
