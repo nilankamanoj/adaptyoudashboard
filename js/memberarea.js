@@ -19,7 +19,7 @@ function logOut() {
 
 function deleteUrl(url) {
     if (newUrl.length > 5) {
-        var data = "url=" + newUrl;
+        var data = "url=" + url;
 
         var xhr = new XMLHttpRequest();
 
@@ -45,7 +45,7 @@ function deleteUrl(url) {
             }
         });
 
-        xhr.open("POST", "https://adaptyoumain.herokuapp.com/api/memberinfo");
+        xhr.open("POST", "https://adaptyoumain.herokuapp.com/api/deletepage");
         xhr.setRequestHeader("Authorization", token);
         xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
