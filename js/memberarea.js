@@ -122,7 +122,7 @@ function loadContent() {
                     for (i = 0; i < urls.length; i++) {
                         urlsStr += "<div class= 'url-bar'>" + urls[i]["url"] + "<span id='close' class = 'del-url' onclick='deleteUrl(\"" + urls[i]["url"] + "\")'>Remove URL</span></br>" + "</div>";
                     }
-                    console.log(urlsStr);
+                    
                     document.getElementById("urls").innerHTML = urlsStr;
                 }
                 else {
