@@ -5,8 +5,6 @@ if (document.cookie) {
     loadContent();
 }
 
-
-
 else {
     document.location.replace("index.html");
 }

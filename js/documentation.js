@@ -27,7 +27,7 @@ function loadContent() {
                 var res = JSON.parse(this.responseText);
                 if (res["success"]) {
                     console.log(this.responseText);
-                    
+
                 }
                 else {
                     delete document.cookie;
