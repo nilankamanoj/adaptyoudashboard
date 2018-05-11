@@ -134,6 +134,9 @@ function signIn() {
 					createCookie(document.getElementById('email').value, res["token"]);
 					document.location.replace("memberarea.html");
 				}
+				else{
+					document.getElementById('info').innerHTML = "<div class='alert alert-danger'><i class='glyphicon glyphicon-warning-sign'></i> &nbsp;"+res["msg"]+" </div>";
+				}
 			}
 		});
 
@@ -167,8 +170,15 @@ function signUp() {
 
 		xhr.addEventListener("readystatechange", function () {
 			if (this.readyState === 4) {
-				console.log(this.responseText);
 				document.getElementById("overlay").style.display = "none";
+				if (res["success"]) {
+					document.getElementById('info').innerHTML = "<div class='alert alert-info'><i class='glyphicon glyphicon-warning-sign'></i> &nbsp;"+res["msg"]+" </div>";
+				}
+				else{
+					document.getElementById('info').innerHTML = "<div class='alert alert-danger'><i class='glyphicon glyphicon-warning-sign'></i> &nbsp;"+res["msg"]+" </div>";
+				}
+				
+				
 			}
 		});
 
