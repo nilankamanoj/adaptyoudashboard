@@ -1,3 +1,8 @@
+/*
+ @author : nilanka manoj 
+ @description: functional javaascript for index.html
+ */
+
 if (document.cookie) {
 	document.getElementById("overlay").style.display = "block";
 	var cred = document.cookie.split(';');
@@ -134,8 +139,8 @@ function signIn() {
 					createCookie(document.getElementById('email').value, res["token"]);
 					document.location.replace("memberarea.html");
 				}
-				else{
-					document.getElementById('info').innerHTML = "<div class='alert alert-danger'><i class='glyphicon glyphicon-warning-sign'></i> &nbsp;"+res["msg"]+" </div>";
+				else {
+					document.getElementById('info').innerHTML = "<div class='alert alert-danger'><i class='glyphicon glyphicon-warning-sign'></i> &nbsp;" + res["msg"] + " </div>";
 				}
 			}
 		});
@@ -173,13 +178,13 @@ function signUp() {
 				var res = JSON.parse(this.responseText);
 				document.getElementById("overlay").style.display = "none";
 				if (res["success"]) {
-					document.getElementById('info').innerHTML = "<div class='alert alert-info'><i class='glyphicon glyphicon-warning-sign'></i> &nbsp;"+res["msg"]+" </div>";
+					document.getElementById('info').innerHTML = "<div class='alert alert-info'><i class='glyphicon glyphicon-warning-sign'></i> &nbsp;" + res["msg"] + " </div>";
 				}
-				else{
-					document.getElementById('info').innerHTML = "<div class='alert alert-danger'><i class='glyphicon glyphicon-warning-sign'></i> &nbsp;"+res["msg"]+" </div>";
+				else {
+					document.getElementById('info').innerHTML = "<div class='alert alert-danger'><i class='glyphicon glyphicon-warning-sign'></i> &nbsp;" + res["msg"] + " </div>";
 				}
-				
-				
+
+
 			}
 		});
 

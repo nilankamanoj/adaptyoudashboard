@@ -1,3 +1,8 @@
+/*
+ @author : nilanka manoj 
+ @description: functional javaascript for memberarea.html
+ */
+
 if (document.cookie) {
     var cred = document.cookie.split(';');
     var email = cred[0].split("=")[1];

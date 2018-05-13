@@ -1,3 +1,9 @@
+/*
+ @author : nilanka manoj 
+ @description: functional javaascript for documentation.html
+ 
+ */
+
 if (document.cookie) {
     var cred = document.cookie.split(';');
     var email = cred[0].split("=")[1];
@@ -5,12 +11,9 @@ if (document.cookie) {
     loadContent();
 }
 
-
-
 else {
     document.location.replace("index.html");
 }
-
 
 function loadContent() {
 
