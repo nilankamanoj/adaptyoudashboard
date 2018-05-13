@@ -2086,4 +2086,15 @@ form label {
   z-index: 20;
 
 }
+
+.tutorial-box{
+  padding: 10px;
+  width : inherit;
+  margin: 10px;
+  background-color: rgba(100,100,100,0.2);
+  border: 2px solid gray
+}
+.tutorial-box img{
+  width: 100%;
+}
 /*# sourceMappingURL=style.css.map */
