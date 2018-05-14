@@ -2092,9 +2092,20 @@ form label {
   width : inherit;
   margin: 10px;
   background-color: rgba(100,100,100,0.2);
-  border: 2px solid gray
+  border: 2px solid gray;
+  color: #000;
 }
 .tutorial-box img{
   width: 100%;
+  height: 500px;
 }
 /*# sourceMappingURL=style.css.map */
+.tutorial {
+  background-image: url("images/img_bg_1.jpg");
+  
+}
+.scrollable {
+  height: 700px; /* or any value */
+  overflow-y: scroll;
+}
+
