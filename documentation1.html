@@ -137,20 +137,103 @@
                                             <p>Load a default view of corresponding URL. Following UI(UI-1) is an example for
                                                 the tutorial. Identify major components of the web page as done in the example</p>
                                             <img src='images/tutorial/ui1.png'>
-                                            <p>You can identify basic components of the web page as logo and header section, navigation bars, main content with sub content boxes, left and right side bars and footer. You can identify ID s of each components using developper tools of your web browser.</p>
-                                            <p>For that, load web page that should be controlled. Then press <strong>F12</strong> to popup developper tool bar. select <strong>Inspector</strong> from it. Now you can see the HTML segments of each component by hover them using mouse pointer.</p>
+                                            <p>You can identify basic components of the web page as logo and header section,
+                                                navigation bars, main content with sub content boxes, left and right side
+                                                bars and footer. You can identify ID s of each components using developper
+                                                tools of your web browser.</p>
+                                            <p>For that, load web page that should be controlled. Then press
+                                                <strong>F12</strong> to popup developper tool bar. select
+                                                <strong>Inspector</strong> from it. Now you can see the HTML segments of each component
+                                                by hover them using mouse pointer.</p>
                                             <img src='images/tutorial/ui2.png'>
-                                            <p>Typically every component start with <strong><font color = "#d9f442">&lt;div </font> <font color = "#42f4e5">id </font> =<font color = "#ee42f4"> "some-id" </font><font color = "#42f4e5">class</font> =<font color = "#ee42f4">  "some-class" </font><font color = "#d9f442">&gt;</font></strong> html tag. Sometimes ID or Class may not be in the tag. Then, identify each and every main components' ID if available. In case of not available of ID s, Put <strong> <font color = "#42f4e5">id </font> =<font color = "#ee42f4"> "unique-id"</font></strong> for heading tag with unique ID s. </p>
+                                            <p>Typically every component start with
+                                                <strong>
+                                                    <font color="#d9f442">&lt;div </font>
+                                                    <font color="#42f4e5">id </font> =
+                                                    <font color="#ee42f4"> "some-id" </font>
+                                                    <font color="#42f4e5">class</font> =
+                                                    <font color="#ee42f4"> "some-class" </font>
+                                                    <font color="#d9f442">&gt;</font>
+                                                </strong> html tag. Sometimes ID or Class may not be in the tag. Then, identify each
+                                                and every main components' ID if available. In case of not available of ID
+                                                s, Put
+                                                <strong>
+                                                    <font color="#42f4e5">id </font> =
+                                                    <font color="#ee42f4"> "unique-id"</font>
+                                                </strong> for heading tag with unique ID s. </p>
                                         </div>
 
                                         <p>2. Remove Compulsory Components From Checklist</p>
                                         <div class="tutorial-box">
-                                            
+                                            <p>When you adding components to adaptation, they might be disapeared due to lower
+                                                usage than other components of the web page. So, identify compulsory componenets
+                                                of the web page such as, logo and header section, navigation bar, footer
+                                                and daily notification sections. </p>
+                                            <p>List down remaining components' ID s and this list will be described as the
+                                                <strong>Component List</strong> in the next sections.</p>
                                         </div>
 
                                         <p>3. Cluster Components According to The Business Logic</p>
                                         <div class="tutorial-box">
+                                            <p>Removing Components may be confusing while performing a single business logic
+                                                across multiple components in a web page. As an example :</p>
+                                            <img src='images/tutorial/ui3.png'>
+                                            <p>Some business task perfoms actions over form1 &gt;&gt; form2 &gt;&gt; form3 continuously.
+                                                If one components is missing, user will be confused when perfoming task.
+                                                So, wrap those componets in one ID as follows; </p>
+                                                <div class="code-box">
+                                                    <font color="#d9f442">&lt;div </font>
+                                                    <font color="#42f4e5">id </font> =
+                                                    <font color="#ee42f4"> "some-unoque-id" </font>
+                                                    <font color="#42f4e5">class</font> =
+                                                    <font color="#ee42f4"> "some-class" </font>
+                                                    <font color="#d9f442">&gt;</font>
+                                                    <br/>
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#d9f442">&lt;div </font>
+                                                    <font color="#42f4e5">id </font> =
+                                                    <font color="#ee42f4"> "form1" </font>
+                                                    <font color="#42f4e5">class</font> =
+                                                    <font color="#ee42f4"> "form1" </font>
+                                                    <font color="#d9f442">&gt;</font>
+                                                    <br/>
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ef8888"> //content of form1 </font>
+                                                    <br/>
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#d9f442">&lt;/div </font>
+                                                    <font color="#d9f442">&gt;</font>
+                                                    <br/>
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#d9f442">&lt;div </font>
+                                                    <font color="#42f4e5">id </font> =
+                                                    <font color="#ee42f4"> "form2" </font>
+                                                    <font color="#42f4e5">class</font> =
+                                                    <font color="#ee42f4"> "form2" </font>
+                                                    <font color="#d9f442">&gt;</font>
+                                                    <br/>
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ef8888"> //content of form2 </font>
+                                                    <br/>
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#d9f442">&lt;/div </font>
+                                                    <font color="#d9f442">&gt;</font>
+                                                    <br/>
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#d9f442">&lt;div </font>
+                                                    <font color="#42f4e5">id </font> =
+                                                    <font color="#ee42f4"> "form3" </font>
+                                                    <font color="#42f4e5">class</font> =
+                                                    <font color="#ee42f4"> "form3" </font>
+                                                    <font color="#d9f442">&gt;</font>
+                                                    <br/>
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ef8888"> //content of form3 </font>
+                                                    <br/>
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#d9f442">&lt;/div </font>
+                                                    <font color="#d9f442">&gt;</font>
+                                                    <br/>
+                                                    <font color="#d9f442">&lt;/div </font>
+                                                    <font color="#d9f442">&gt;</font>
+
+
+                                                </div>
+                                                
+
                                             
+
                                         </div>
 
                                     </div>
