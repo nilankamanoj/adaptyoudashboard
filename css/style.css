@@ -2115,3 +2115,19 @@ form label {
   padding: 20px;
   background-color: rgba(0,0,0,0.5)
 }
+
+.tutorial-box table{
+  margin: 20px;
+  margin-left: 80px;
+  color: wheat;
+  padding 5px;
+}
+.tutorial-box td{
+  border: 1px solid;
+  padding: 5px
+}
+.tutorial-box th{
+  border: 1px solid;
+  padding: 5px;
+  color: white
+}

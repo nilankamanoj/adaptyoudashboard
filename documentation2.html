@@ -119,42 +119,160 @@
             data-stellar-background-ratio="0.5">
             <div class="overlay"></div>
             <div class="gtco-container">
-                <div class="row">
-                    <div class="col-md-12 col-md-offset-0 text-left">
 
 
-                        <div class="row row-mt-15em">
-                            <span class="intro-text-small" id="message"> </span>
-                            <div class="form-wrap" data-animate-effect="fadeInUp">
-                                <div class="tab">
 
-                                    <div class="tab-content">
-                                        <div class="tab-content-inner active" data-content="signup">
-                                            <h3>2. Create Elements Array</h3>
-                                        <hr>
-                                        <span id='close' class='btn-url' onclick="location.href='documentation3.html';">next</span><span id='close' class='btn-url' onclick="location.href='documentation1.html';">Back</span>
-                                        </br>
-                                            <div class='documentation' onclick="location.href='memberarea.html';">Back to Client Area</div>
+                <div class="row row-mt-15em">
+
+                    <div class="form-wrap" data-animate-effect="fadeInUp">
+                        <div class="tab">
+
+                            <div class="tab-content">
+                                <div class="tab-content-inner active" data-content="signup">
+                                    <h3 class="">2. Create Array of ID s</h3>
+                                    <div class="scrollable">
+
+                                        <p>1. Title Selected Components.</p>
+                                        <div class="tutorial-box">
+                                            <p>Once removed component in adaptation process, user can add those individually
+                                                to the web page, in case of requirement. For that, user should have a name
+                                                to identify component for addition. So, titles of each component should be
+                                                provided. Title should be in between 2-5 words that describes the function
+                                                of component. As an example ;
+                                            </p>
+
+                                            <table>
+                                                <tr>
+                                                    <th>component functionality</th>
+                                                    <th>title</th>
+                                                </tr>
+                                                <tr>
+                                                    <td>view the things that to be done.</td>
+                                                    <td>to-do list</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>show the news of the day</td>
+                                                    <td>news feed</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>show notifications from the management</td>
+                                                    <td>notification tab</td>
+                                                </tr>
+                                            </table>
+
+                                            <p>
+                                                Create unique and descriptive titles for all elements in
+                                                <strong>component list</strong> and edit header tag of each component by adding title
+                                                to it as ;
+                                            </p>
+                                            <div class="code-box">
+                                                <font color="#d9f442">&lt;div </font>
+                                                <font color="#42f4e5">id </font> =
+                                                <font color="#ee42f4"> "feed-box" </font>
+                                                <font color="#42f4e5">class</font> =
+                                                <font color="#ee42f4"> "feed-box" </font>
+                                                <font color="#42f4e5">title </font> =
+                                                <font color="#ee42f4"> "news feed" </font>
+                                                <font color="#d9f442">&gt;</font>
+                                                <br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                <font color="#ef8888"> //content of news feed </font>
+                                                <br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                <font color="#d9f442">&lt;/div </font>
+                                                <font color="#d9f442">&gt;</font>
+                                                <br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                <font color="#d9f442">&lt;div </font>
+                                                <font color="#42f4e5">id </font> =
+                                                <font color="#ee42f4"> "list-main" </font>
+                                                <font color="#42f4e5">class</font> =
+                                                <font color="#ee42f4"> "list-main" </font>
+                                                <font color="#42f4e5">title </font> =
+                                                <font color="#ee42f4"> "to-do list" </font>
+                                                <font color="#d9f442">&gt;</font>
+                                                <br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                <font color="#ef8888"> //content of to do list </font>
+                                                <br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                <font color="#d9f442">&lt;/div </font>
+                                                <font color="#d9f442">&gt;</font>
+                                                <br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                <font color="#d9f442">&lt;div </font>
+                                                <font color="#42f4e5">id </font> =
+                                                <font color="#ee42f4"> "not-box" </font>
+                                                <font color="#42f4e5">class</font> =
+                                                <font color="#ee42f4"> "not-box" </font>
+                                                <font color="#42f4e5">title </font> =
+                                                <font color="#ee42f4"> "notification bar" </font>
+                                                <font color="#d9f442">&gt;</font>
+                                                <br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                <font color="#ef8888"> //content of notification area </font>
+                                                <br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                <font color="#d9f442">&lt;/div </font>
+                                                <font color="#d9f442">&gt;</font>
+                                                <br/>
+                                            </div>
+                                        </div>
+
+                                        <p>2. Create Array and Paste on WebPage.</p>
+                                        <div class="tutorial-box">
+                                            <p>Now create a javascript array of element ID as follows and paste it just before
+                                                body tag closer.</p>
+                                            <div class="code-box">
+                                                <font color="#ef8888"> //content of entire body </font>
+                                                <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                <font color="#d9f442">&lt;script </font>
+                                                <font color="#42f4e5">type </font> =
+                                                <font color="#ee42f4"> "text/javascript" </font>
+                                                <font color="#d9f442">&gt;</font>
+
+                                                <br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                <font color="#d9f442">var </font>                                                
+                                                <font color="#42f4e5"> array </font> =
+                                                <font color="#ee42f4"> [ </font><font color="#ef8888">"form1"</font>
+                                                <font color="#ee42f4"> , </font><font color="#ef8888">"nottify-tab"</font>
+                                                <font color="#ee42f4"> , </font><font color="#ef8888">"news-area"</font>
+                                                <font color="#ee42f4"> , </font><font color="#ef8888">"link-box"</font>
+                                                <font color="#ee42f4"> , </font><font color="#ef8888">"list-main"</font>
+                                                <font color="#ee42f4"> ] </font>
+                                                <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                <font color="#d9f442">&lt;/script </font>
+                                                <font color="#d9f442">&gt;</font>
+                                                <br/>
+                                                <font color="#d9f442">&lt;/body </font>
+                                                <font color="#d9f442">&gt;</font>
+                                                <br/>
+                                            </div>
                                         </div>
 
 
+
                                     </div>
+                                    </br>
+                                    <span id='close' class='btn-url' onclick="location.href='documentation3.html';">next</span>
+                                    <span id='close' class='btn-url' onclick="location.href='documentation1.html';">Back</span>
+                                    </br>
+                                    <div class='documentation' onclick="location.href='memberarea.html';">Back to Client Area</div>
                                 </div>
-
                             </div>
-
                         </div>
-
-
                     </div>
+
                 </div>
+
             </div>
+
+
+
         </header>
 
 
 
 
         <footer id="gtco-footer" role="contentinfo" style="background-image: url(images/img_bg_1.jpg)" data-stellar-background-ratio="0.5">
+            </br>
+            </br>
+            </br>
+            </br>
+            </br>
+            </br>
             <div class="overlay"></div>
             <div class="gtco-container">
                 <div class="row row-pb-md">
